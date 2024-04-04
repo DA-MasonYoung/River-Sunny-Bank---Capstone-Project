@@ -1,26 +1,26 @@
 CREATE TABLE AccountStatusCodes (
-	StatusCode				CHAR(2)		PRIMARY KEY,
+	StatusCode			CHAR(2)		PRIMARY KEY,
 	StatusDescription		VARCHAR(100)
 );
 
 CREATE TABLE StateCodes (
-	StateCode				CHAR(2)		PRIMARY KEY,
-	StateName				VARCHAR(50),
+	StateCode			CHAR(2)		PRIMARY KEY,
+	StateName			VARCHAR(50),
 );
 
 CREATE TABLE TransactionTypeCodes (
 	TransactionTypeCode		CHAR(2)		PRIMARY KEY,
-	TransactionDescription	VARCHAR(50),
+	TransactionDescription		VARCHAR(50),
 );
 
 CREATE TABLE LoanTypeCodes (
 	LoanTypeCode			CHAR(2)		PRIMARY KEY,
-	LoanType				VARCHAR(20)
+	LoanType			VARCHAR(20)
 );
 
 CREATE TABLE DepartmentCodes (
 	DepartmentCode			CHAR(2)		PRIMARY KEY,
-	DepartmentDescription	VARCHAR(25)
+	DepartmentDescription		VARCHAR(25)
 );
 
 
@@ -155,15 +155,15 @@ Values
 DROP TABLE Loan;
 
 CREATE TABLE Loan (
-	LoanID				INT				PRIMARY KEY			IDENTITY(1000,1),
-	AccountNumber		INT				NOT NULL,
-	LoanType			CHAR(2)			NOT NULL,
-	LoanAmount			DECIMAL(15, 2)	NOT NULL,
-	CurrentBalance		DECIMAL(15, 2)	NOT NULL,	-- NEW COLUMN!!
-	InterestRate		DECIMAL(5, 2)	NOT NULL,
-	LoanTerm			INT				NOT NULL,
+	LoanID			INT			PRIMARY KEY		IDENTITY(1000,1),
+	AccountNumber		INT			NOT NULL,
+	LoanType		CHAR(2)			NOT NULL,
+	LoanAmount		DECIMAL(15, 2)		NOT NULL,
+	CurrentBalance		DECIMAL(15, 2)		NOT NULL,	-- NEW COLUMN!!
+	InterestRate		DECIMAL(5, 2)		NOT NULL,
+	LoanTerm		INT			NOT NULL,
 	ApprovalDate		DATE			NOT NULL,
-	PayOffDate			DATE			NOT NULL,
+	PayOffDate		DATE			NOT NULL,
 
 	CONSTRAINT FK_Loan_AccountNumber FOREIGN KEY (AccountNumber) REFERENCES Account(AccountNumber) ON DELETE CASCADE,
 	CONSTRAINT CK_Loan_LoanType	CHECK(LoanType IN('AA', 'MM', 'BB', 'RV', 'HH', 'PP', 'SS'))
