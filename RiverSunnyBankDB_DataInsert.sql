@@ -1,6 +1,5 @@
 -- PBSC Database Capstone Project --
 -- River Sunny Bank Database Table Creation --
--- Authors: Wahiba Pereira, Wenxin liang, Samy Baker, and Mason Young --
 
 
 USE RiverSunnyBank; -- Ensure You have the Correct DB Created. If not See Creation SQL Script. --
@@ -4419,6 +4418,4 @@ VALUES
 (1525,'MM',7897,4738.2,5.15,84,'2007-02-13','2014-01-07'),
 (1526,'PP',1451,870.6,1.81,60,'2010-07-03','2015-06-07'),
 (1527,'PP',7918,4750.8,20.9,84,'2011-03-06','2018-01-28'),
-
 ;
-
